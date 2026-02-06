@@ -1,0 +1,108 @@
+/* 1. The Layout Container */
+.navbar {
+  display: flex; /* Turns on Flexbox */
+  justify-content: space-between; /* Pushes Logo to left, Links to right */
+  align-items: center; /* Centers items vertically */
+  padding: 20px 5%;
+  background-color: #333;
+  color: white;
+}
+
+/* 2. The Link List */
+.nav-links {
+  display: flex; /* Makes the <li> items go side-by-side */
+  list-style: none; /* Removes the bullet points */
+}
+
+.nav-links li {
+  margin-left: 20px; /* Adds space between each link */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none; /* Removes the default underline */
+}
+
+/* 3. Hover Effect */
+.nav-links a:hover {
+  color: #ff9900; /* Changes color when you mouse over */
+}
+
+/* The Hero Container */
+.hero {
+  height: 80vh; /*Makes it 80% of the screen height, 'viewport height'*/
+  display: flex;
+  justify-content: center; /*Centers horizontally*/
+  align-items: center; /*Centers vertically*/
+  text-align: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(img/atmosphere-photo.jpg);
+  background-size: cover; /*Makes image fill the whole space*/
+  background-position: center;
+  color: white;
+}
+
+/*Text Styling*/
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+/*The Button*/
+.hero-btn {
+  background-color: #ff9900;
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #e68a00;
+  transform: scale(1.1);
+}
+
+/*Features*/
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 10%;
+  background-color: #f4f4f4;
+}
+
+.feature-card {
+  background: white;
+  padding: 20px;
+  width: 25%;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*Add a nice 'lifted' look*/
+}
+
+@media (max-width: 768px) {
+  /*Stack the navbar links verically*/
+  .navbar,
+  .nav-links,
+  .features {
+    flex-direction: column;
+  }
+
+  /*Give the cards full width when stacked*/
+  .feature-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  /*Adjust the hero text size for small screens*/
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
