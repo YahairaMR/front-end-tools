@@ -1,14 +1,6 @@
-/*  { 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
- }  */
-
 /* BASE */
 body {
   font-family: "Nunito", sans-serif;
-  /* font-optical-sizing: auto; */
-  /* font-weight: 400; */
   font-style: normal;
   color: #6b350e;
   font-size: 22px;
@@ -43,13 +35,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  color: white;
+  flex-wrap: wrap;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  text-transform: uppercase;
+  text-transform: uppercase; 
+  margin-left: auto;
 }
 
 .nav-links li {
@@ -59,11 +52,6 @@ header {
 .nav-links a {
   color: white;
   text-decoration: none;
-}
-
-nav img {
-  padding: 20px;
-  padding-left: 5px;
 }
 
 h1 {
@@ -103,70 +91,36 @@ h1 {
   font-size: 25px;
 }
 
-/* FEATURES */
-/* .features {
+/* SECTIONS */
+main {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 40px 20px;
 }
 
-.feature {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 4rem;
-}
-
-.feature.reverse {
-  direction: rtl;
-}
-
-.feature.reverse .feature-text {
-  direction: ltr;
-}
-
-.feature-text h3 {
-  margin-bottom: 0.75rem;
-  font-size: 1.2rem;
-} */
-
-/* MENUS */
-.menus {
+main section {
   display: flex;
-  /* grid-template-columns: repeat(2, 1fr); */
-  gap: 30px;
-  /* max-width: 900px;
-  margin: 0 auto 12px;
-  padding: 0 10px; */
-
-  color: white;
-  justify-content: center;
-  padding-top: 80px;
+  align-items: center;
+  gap: 40px; /* Space between image and text */
+  margin-bottom: 80px;
+  flex-wrap: wrap; /* For zoom/mobile: allows stacking */
 }
 
-.menu-card {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  text-decoration: none;
-  color: #fff;
-
-  position: relative;
-  height: 390px;
-  width: 500px;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  overflow: hidden;
-  display: inline-block;
+main section img, 
+.feature-text1, 
+.feature-text2 {
+  flex: 1 1 400px; /* Grow, shrink, and basis of 400px */
+  max-width: 100%;
 }
 
-.menu-card {
-  position: absolute;
-  bottom: 10px;
-  /* right: 100px; */
-  font-size: 30px;
-  font-weight: 800;
+main section img {
+  border-radius: 15px;
+  object-fit: cover;
+  height: 450px; /* Keeps images consistent */
+}
+
+main section:nth-of-type(2) {
+  flex-direction: row-reverse;
 }
 
 .coffee-sign {
@@ -179,6 +133,48 @@ div .coffee-sign {
   justify-content: center;
 }
 
+ /* MENUS */
+.menus {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 30px;
+  max-width: 1000px; /* Increased to fit two cards side-by-side comfortably */
+  margin: 0 auto 50px;
+  padding: 80px 20px 0; 
+  justify-content: center;
+}
+
+.menu-card {
+  position: relative; 
+  border-radius: 20px;
+  overflow: hidden; 
+  text-decoration: none; 
+  height: 400px; 
+  flex: 1;  /* Allows cards to grow equally */
+  min-width: 300px; /* Prevents them from getting too skinny */
+}
+
+.menu-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills the card without stretching  */
+  display: block;
+} 
+
+.menu-card p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0; 
+  padding: 25px;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+
+
 /* FOOTER */
 footer {
   margin-top: 50px;
@@ -190,7 +186,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
-}
+} 
 
 .address {
   font-weight: 800;
